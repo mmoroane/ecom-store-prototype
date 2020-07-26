@@ -9,6 +9,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { AdduserComponent } from './admin/users/adduser/adduser.component';
 import {FormsModule} from '@angular/forms';
 import { ViewuserComponent } from './admin/users/viewuser/viewuser.component';
+import { ItemsComponent } from './admin/items/items.component';
+import { AdditemComponent } from './admin/items/additem/additem.component';
+import { LoginComponent } from './login/login.component';
+import { RouterModule } from '@angular/router';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -16,13 +21,21 @@ import { ViewuserComponent } from './admin/users/viewuser/viewuser.component';
     MenuComponent,
     UsersComponent,
     AdduserComponent,
-    ViewuserComponent
+    ViewuserComponent,
+    ItemsComponent,
+    AdditemComponent,
+    LoginComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot([
+      { path:"", component:HomeComponent,pathMatch:"full"},
+      { path:"login", component:LoginComponent}
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -8,7 +8,10 @@
                     Admin
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a routerLink="/admin/users">Users</a>
+                    <a routerLink="/admin/users" class="dropdown-item">Users</a>
+                    <a routerLink="/admin/items" class="dropdown-item">Items</a>
+                    <a routerLink="/login" class="dropdown-item">Login</a>
+                    <a [routerLink] ="['/login']" class="dropdown-item">Login</a>
                 </div>
             </li>
         </ul>

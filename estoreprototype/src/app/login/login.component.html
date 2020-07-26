@@ -1,0 +1,12 @@
+<div>
+    <form action ="#" method="POST" #f="ngForm" autocomplete="off" (ngSubmit)="loginFunc()">
+        <fieldset>
+            <legend>Login</legend>
+            <label for="email">Email Address:</label><br/>
+            <input type="text" id="email" name="email" [(ngModel)]="user.name" placeholder="Enter email address" required #email="ngModel"/><br/>
+            <label for="pswrd">Password</label><br/>
+            <input type="password" id="password" name="password" [(ngModel)]="user.password" placeholder="Enter password" required #password="ngModel"/><br/><br/>
+                        <input type="submit" value="Sign In" onclick=""/>
+                    </fieldset>
+                </form>
+            </div>

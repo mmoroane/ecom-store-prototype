@@ -1,6 +1,7 @@
 package com.mmoroane.ecomstore.service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,6 +21,17 @@ public class UserService {
 
 	public User getUser(int id) {
 		return userRepository.findById(id).get();
+	}
+	
+	public User getByName(String username) {
+		List<User> allUsers = getAllUsers();
+		
+		for (User user: allUsers) {
+			if (user.getName().equals(username) ) {
+				return user;
+			}
+		}
+		return null;
 	}
 
 	public void addUser(User user) {
