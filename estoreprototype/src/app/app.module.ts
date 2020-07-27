@@ -15,6 +15,7 @@ import { LoginComponent } from './login/login.component';
 import { RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { ViewitemComponent } from './admin/items/viewitem/viewitem.component';
+import { ShopitemComponent } from './shopitem/shopitem.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { ViewitemComponent } from './admin/items/viewitem/viewitem.component';
     AdditemComponent,
     LoginComponent,
     HomeComponent,
-    ViewitemComponent
+    ViewitemComponent,
+    ShopitemComponent
   ],
   imports: [
     BrowserModule,

@@ -4,5 +4,6 @@ export class Item {
     description: string;
     price: number;
     picByte: string; 
-    retrievedImage: string;   
+    retrievedImage: string;
+    isAdded: boolean;
     }
