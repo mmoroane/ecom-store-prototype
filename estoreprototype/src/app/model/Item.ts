@@ -3,5 +3,6 @@ export class Item {
     name: string;
     description: string;
     price: number;
-    picByte: string;    
+    picByte: string; 
+    retrievedImage: string;   
     }

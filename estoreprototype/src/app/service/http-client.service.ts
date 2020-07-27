@@ -38,4 +38,12 @@ export class HttpClientService {
   getByName(name) {
     return this.httpClient.get<User>('http://localhost:8080/users/username/' + name);
   }
+
+  deleteItem(id) {
+    return this.httpClient.delete<Item>('http://localhost:8080/items/' + id);
+  }
+
+  updateItem(updatedItem: Item) {
+    return this.httpClient.put<Item>('http://localhost:8080/items/update', updatedItem);
+  }
 }

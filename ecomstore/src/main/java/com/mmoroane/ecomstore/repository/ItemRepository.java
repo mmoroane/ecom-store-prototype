@@ -1,4 +1,4 @@
-package com.mmoroane.ecomstore.db;
+package com.mmoroane.ecomstore.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

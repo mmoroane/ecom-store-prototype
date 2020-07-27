@@ -41,25 +41,35 @@ export class AdditemComponent implements OnInit {
 
   saveItem() {
 
-    const uploadData = new FormData();
-    uploadData.append('imageFile', this.selectedFile, this.selectedFile.name);
-    this.selectedFile.imageName = this.selectedFile.name;
+    if (this.item.id == null) {
 
-    this.httpClient.post('http://localhost:8080/items/upload', uploadData, { observe: 'response' })
-      .subscribe((response) => {
-        if (response.status === 200) {
-          this.httpClientService.addItem(this.item).subscribe(
-            (item) => {
-              this.itemAddedEvent.emit();
-              this.router.navigate(['admin', 'items']);
-            }
-          );
-          console.log('Image uploaded successfully');
-        } else {
-          console.log('Image not uploaded successfully');
+      const uploadData = new FormData();
+      uploadData.append('imageFile', this.selectedFile, this.selectedFile.name);
+      this.selectedFile.imageName = this.selectedFile.name;
+
+      this.httpClient.post('http://localhost:8080/items/upload', uploadData, { observe: 'response' })
+        .subscribe((response) => {
+          if (response.status === 200) {
+            this.httpClientService.addItem(this.item).subscribe(
+              (item) => {
+                this.itemAddedEvent.emit();
+                this.router.navigate(['admin', 'items']);
+              }
+            );
+            console.log('Image uploaded successfully');
+          } else {
+            console.log('Image not uploaded successfully');
+          }
         }
-      }
+        );
+    } else {
+      this.httpClientService.updateItem(this.item).subscribe(
+        (item) => {
+          this.itemAddedEvent.emit();
+          this.router.navigate(['admin', 'items']);
+        }
       );
-  }
+    }
+  } 
 
 }

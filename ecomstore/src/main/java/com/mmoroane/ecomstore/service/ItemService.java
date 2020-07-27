@@ -5,8 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.mmoroane.ecomstore.db.ItemRepository;
 import com.mmoroane.ecomstore.model.Item;
+import com.mmoroane.ecomstore.repository.ItemRepository;
 
 @Service
 public class ItemService {

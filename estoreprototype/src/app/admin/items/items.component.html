@@ -15,13 +15,14 @@
           <td>{{item.id}}</td>
           <td>{{item.name}}</td>
           <td>
-            <button type="button" class="btn btn-primary" (click)="setItem(item.id)">Show Details</button>
+            <button type="button" class="btn btn-primary" (click)="viewItem(item.id)"> Show Details</button>
           </td>
         </tr>
       </tbody>
     </table>
   </div>
   <div class="col-md-6">
-    <app-additem *ngIf="action === 'add'" [item]="selectedItem" (itemAddedEvent)="refreshData()"></app-additem>
+    <app-additem *ngIf="action === 'edit' || action === 'add'" [item]="selectedItem" (itemAddedEvent)="refreshData()"></app-additem>
+    <app-viewitem *ngIf="action === 'view'" [item]="selectedItem" (itemDeletedEvent)="refreshData()"></app-viewitem>
   </div>
 </div>
