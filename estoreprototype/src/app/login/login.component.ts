@@ -19,9 +19,9 @@ export class LoginComponent implements OnInit {
 
   }
 
-  loginFunc() {
-    let username = this.user.name;
-    this._http.getByName(username).subscribe((data) =>
+  selectUser() {
+    let username = this.user.id;
+    this._http.getUser(username).subscribe((data) =>
     {
       console.log(data);
     }, (err: HttpErrorResponse | Error) => {

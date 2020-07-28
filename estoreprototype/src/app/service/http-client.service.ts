@@ -35,8 +35,8 @@ export class HttpClientService {
     return this.httpClient.post<Item>('http://localhost:8080/items/add', newItem);
   }
 
-  getByName(name) {
-    return this.httpClient.get<User>('http://localhost:8080/users/username/' + name);
+  getUser(id) {
+    return this.httpClient.get<User>('http://localhost:8080/users/' + id);
   }
 
   deleteItem(id) {

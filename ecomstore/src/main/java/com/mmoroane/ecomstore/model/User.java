@@ -2,8 +2,6 @@ package com.mmoroane.ecomstore.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -13,32 +11,75 @@ public class User {
 
 	@Id
 	@Column(name = "id")
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+	private String id;
 
-	@Column(name = "name")
-	private String name;
-
-	@Column(name = "password")
-	private String password;
+	@Column(name = "fname")
+	private String fName;
+	
+	@Column(name = "lname")
+	private String lName;
+	
+	@Column(name = "dob")
+	private String dob;
+	
+	@Column(name = "email")
+	private String email;
+	
+	@Column(name = "phone")
+	private String phone;
 
 	@Column(name = "type")
 	private String type;
+	
+	@Column(name = "password")
+	private String password;
 
-	public int getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 
-	public String getName() {
-		return name;
+	public String getfName() {
+		return fName;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setfName(String fName) {
+		this.fName = fName;
+	}
+
+	public String getlName() {
+		return lName;
+	}
+
+	public void setlName(String lName) {
+		this.lName = lName;
+	}
+
+	public String getDob() {
+		return dob;
+	}
+
+	public void setDob(String dob) {
+		this.dob = dob;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getPhone() {
+		return phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
 	}
 
 	public String getType() {
@@ -56,5 +97,4 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-
 }

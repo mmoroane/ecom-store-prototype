@@ -19,10 +19,11 @@ public class UserService {
 		return userRepository.findAll();
 	}
 
-	public User getUser(int id) {
+	public User getUser(String id) {
 		return userRepository.findById(id).get();
 	}
 	
+	/*
 	public User getByName(String username) {
 		List<User> allUsers = getAllUsers();
 		
@@ -32,12 +33,12 @@ public class UserService {
 			}
 		}
 		return null;
-	}
+	}*/
 
 	public void addUser(User user) {
 		userRepository.save(user);
 	}
-	public void deleteUser(int id) {
+	public void deleteUser(String id) {
 		userRepository.deleteById(id);
 	}
 

@@ -58,8 +58,4 @@ public class ItemController {
 		return item;
 	}
 	
-	@PutMapping("/update")
-	public void updateBook(@RequestBody Item item) {
-		itemRepository.save(item);
-	}
 }

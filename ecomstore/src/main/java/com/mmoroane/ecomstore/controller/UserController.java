@@ -27,7 +27,7 @@ public class UserController {
 	}
 	
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
-	public User getUser(@PathVariable int id) {
+	public User getUser(@PathVariable String id) {
 		return userService.getUser(id);
 	}
 	
@@ -37,17 +37,18 @@ public class UserController {
 	}
 	
 	@RequestMapping(method = RequestMethod.PUT, value = "/{id}")
-	public void updateUser(@RequestBody User user, @PathVariable int id) {
+	public void updateUser(@RequestBody User user, @PathVariable String id) {
 		userService.updateUser(user);
 	}
 	
 	@RequestMapping(method = RequestMethod.DELETE, value = "/{id}")
-	public void deleteUser(@PathVariable int id) {
+	public void deleteUser(@PathVariable String id) {
 		userService.deleteUser(id);
 	}
 	
+	/*
 	@RequestMapping(value = "/username/{name}", method = RequestMethod.GET)
 	public User getUsername(@PathVariable String name) {
 		return userService.getByName(name);
-	}
+	}*/
 }
